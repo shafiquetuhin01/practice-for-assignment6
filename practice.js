@@ -49,6 +49,58 @@ const separate = multiNum.map(num => num / 7); */
 // console.log(separate);
 
 // practice No- 5
-const multiNum = [23, 3245, 42, 424, 455, 231, 36, 66, 45];
-const separate = multiNum.map(num => num / 7);
-console.log(separate);
+// map 
+/* const numbers = [65, 44, 12, 4];
+const newArr = numbers.map(myFunction)
+function myFunction(num) {
+  return num * 10;
+}; */
+// console.log(newArr);
+
+// forEach 
+/* const array1 = ['a', 'b', 'c'];
+array1.forEach(element => console.log(element)); */
+
+// filter 
+/* const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length < 10);
+console.log(result); */
+
+// find 
+/* const array1 = [5, 12, 8, 130, 44];
+const found = array1.find(element => element > 10);
+console.log(found); */
+
+// Practice No - 6 
+// destructuring
+/* const myCar = {
+    make: 'Ford',
+    price: 3000000,
+    model: 'Mustang',
+    year: 1969
+};
+myCar['make'] = 'Ford';
+myCar['model'] = 'Mustang';
+myCar['year'] = 1969;
+myCar['price'] = 3000000;
+const balance = myCar.price;
+console.log(balance);
+ */
+
+// Practice No - 7 
+// JSON Placeholder 
+function loadPhotos(){
+    fetch('https://jsonplaceholder.typicode.com/photos')
+    .then(res => res.json())
+    .then(data => displayPhotos(data))
+};
+loadPhotos();
+function displayPhotos(photos){
+    const ul = document.getElementById('photos');
+    for(const photo of photos){
+        const li = document.createElement('li');
+        li.innerText = `Id: ${photo.id}, Title: ${photo.title}, ${photo.url}`;
+        ul.appendChild(li);
+    }
+};
+
