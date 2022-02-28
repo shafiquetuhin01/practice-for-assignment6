@@ -42,3 +42,13 @@ console.log(arrowFunc2(49)); */
     return add;
 } */
 // console.log(arrowFunc4(30, 30));
+
+// practice No- 4
+/* const multiNum = [23, 3245, 42, 424, 455, 231, 36, 66, 45];
+const separate = multiNum.map(num => num / 7); */
+// console.log(separate);
+
+// practice No- 5
+const multiNum = [23, 3245, 42, 424, 455, 231, 36, 66, 45];
+const separate = multiNum.map(num => num / 7);
+console.log(separate);
