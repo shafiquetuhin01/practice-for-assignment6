@@ -89,18 +89,22 @@ console.log(balance);
 
 // Practice No - 7 
 // JSON Placeholder 
-function loadPhotos(){
+function loadPhotos() {
     fetch('https://jsonplaceholder.typicode.com/photos')
-    .then(res => res.json())
-    .then(data => displayPhotos(data))
+        .then(res => res.json())
+        .then(data => displayPhotos(data))
 };
 loadPhotos();
-function displayPhotos(photos){
-    const ul = document.getElementById('photos');
-    for(const photo of photos){
-        const li = document.createElement('li');
-        li.innerText = `Id: ${photo.id}, Title: ${photo.title}, ${photo.url}`;
-        ul.appendChild(li);
+function displayPhotos(photos) {
+    const photosList = document.getElementById('showPhoto');
+    for (const photo of photos) {
+        const div = document.createElement('div');
+        div.classList.add('col-md-4', 'photos');
+        div.innerHTML = `
+        <h5>Id: ${photo.id}</h5>
+        <h4>Title: ${photo.title}</h4>
+        <h6><a href="${photo.url}">${photo.url}</a><h6>`;
+        photosList.appendChild(div);
     }
 };
 
